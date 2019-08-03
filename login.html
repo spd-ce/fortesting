@@ -157,111 +157,6 @@ input[type=text]:placeholder {
 }
 
 
-
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-/* Simple CSS3 Fade-in Animation */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-.fadeIn {
-  opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
-}
-
-.fadeIn.first {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-
-.fadeIn.third {
-  -webkit-animation-delay: 0.8s;
-  -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-
-.fadeIn.fourth {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-/* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
-  display: block;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: #56baed;
-  content: "";
-  transition: width 0.2s;
-}
-
-.underlineHover:hover {
-  color: #0d0d0d;
-}
-
-.underlineHover:hover:after{
-  width: 100%;
-}
-
-
-
 /* OTHERS */
 
 *:focus {
@@ -294,7 +189,7 @@ input[type=text]:placeholder {
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t1.0-9/11988747_922473221146921_4458587715312021914_n.png?_nc_cat=110&_nc_oc=AQk14jGbh2_oBp5uoqDIbxTsjAxkRFymHujWZPqH00437j_zlE2FNKsCgm9yfR-ShIkFKcEXzBvK5IhHJQNdyDUd&_nc_ht=scontent.fbkk12-4.fna&oh=7f9ca0731c8e88119693ca7c193cd0d6&oe=5DA75D07" width="50" id="icon" alt="User Icon" />
+      <img src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t1.0-9/11988747_922473221146921_4458587715312021914_n.png?_nc_cat=110&_nc_oc=AQk14jGbh2_oBp5uoqDIbxTsjAxkRFymHujWZPqH00437j_zlE2FNKsCgm9yfR-ShIkFKcEXzBvK5IhHJQNdyDUd&_nc_ht=scontent.fbkk12-4.fna&oh=7f9ca0731c8e88119693ca7c193cd0d6&oe=5DA75D07" width="50px" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
