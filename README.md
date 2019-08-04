@@ -1,3 +1,3 @@
 # fortesting
 
-go to https://spd-ce.github.io/fortesting/login.html
+go to https://spd-ce.github.io/fortesting/signin.html
