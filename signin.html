@@ -44,7 +44,7 @@
 		function signin(){
 			isValid = false;
 		
-			username = $("#txt_email").val();
+			username = $("#txt_username").val();
 			password = $("#txt_password").val();
 			
 			
@@ -69,12 +69,12 @@
   </div>
 
   <div>
-	<label for="inputEmail" class="sr-only">Email address</label>
-	<input type="email" id="txt_email" class="form-control" placeholder="Email address" required autofocus>
+	<label for="txt_username" class="sr-only">Username</label>
+	<input type="text" id="txt_username" class="form-control" placeholder="Username" required autofocus>
   </div>
   
   <div>
-	  <label for="inputPassword" class="sr-only">Password</label>
+	  <label for="txt_password" class="sr-only">Password</label>
 	  <input type="password" id="txt_password" class="form-control" placeholder="Password" required>
   </div>
   <button id="btn_signin" class="btn btn-lg btn-primary btn-block" type="submit" onclick="signin()">Sign in</button>
