@@ -12,7 +12,3 @@ go to https://spd-ce.github.io/fortesting/signin.html
 
 ## Test
 - robot test/test-signin.robot
-
-## Instruction
-
-- (Thai Language) https://docs.google.com/document/d/1TfBpaqQ16zIx-VX15695B0gMc6socuzY9dYlZsy7qJA
