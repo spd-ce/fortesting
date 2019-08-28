@@ -2,37 +2,58 @@
 Test Teardown   Close Browser
 Library    Selenium2Library
 
+
+
 *** Variables ***
 ${url_signin}    https://spd-ce.github.io/fortesting/signin.html
-${title_signin}    Sign In
-${txt_user}      //*[@id="txt_username"]
-${txt_pass}       //*[@id="txt_password"]
-${btn_signin}      //*[@id="btn_signin"]
-${username_success}    cekmitl
-${pass_success}    ecc56789
-${username_fail}    cekmitl_Failed
-${pass_fail}      ecc567899999
-${signin_fail}     //*[@id="error_alert"]
-${signin_pass}     Home
-${fail_text}      Please enter valid username and password!
+${textbox_username}      //*[@id="txt_username"]
+${textbox_password}      //*[@id="txt_password"]
+${button_signin}      //*[@id="btn_signin"]
+${alert_box_error}     //*[@id="error_alert"]
+
+
 
 *** Test Cases ***
-Sign-in valid with email and password
+T001 Sign-in valid with email and password
     [Tags]    successful-case
     Open Browser    ${url_signin}    chrome
-    Verify Title Page    ${title_signin}
-    Input Username and Password    ${txt_user}    ${txt_pass}    ${username_success}    ${pass_success}
-    Click Button Signin    ${btn_signin}
-    Verify Title Page    ${signin_pass}
+    Verify Title Page    Sign In
+    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl    ecc56789
+    Click Button Signin    ${button_signin}
+    Verify Title Page    Home
 
-Sign-in with invalid email and password
+
+T0002 Sign-in with valid email and invalid password
     [Tags]    failed-case
     Open Browser    about:blank    chrome
     Go To    ${url_signin}
-    Verify Title Page    ${title_signin}
-    Input Username and Password    ${txt_user}    ${txt_pass}    ${username_fail}    ${pass_fail}
-    Click Button Signin    ${btn_signin}
-    Verify Signin    ${signin_fail}    ${fail_text}
+    Verify Title Page    Sign In
+    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl    ecc56789_x
+    Click Button Signin    ${button_signin}
+    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+
+
+T0003 Sign-in with invalid email and valid password
+    [Tags]    failed-case
+    Open Browser    about:blank    chrome
+    Go To    ${url_signin}
+    Verify Title Page    Sign In
+    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl_x    ecc56789
+    Click Button Signin    ${button_signin}
+    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+
+
+T0004 Sign-in with invalid email and invalid password
+    [Tags]    failed-case
+    Open Browser    about:blank    chrome
+    Go To    ${url_signin}
+    Verify Title Page    Sign In
+    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl_x    ecc56789_x
+    Click Button Signin    ${button_signin}
+    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+
+
+
 
 *** Keywords ***
 Verify Title Page
