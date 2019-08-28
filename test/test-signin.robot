@@ -20,8 +20,7 @@ ${alert_box_error}     //*[@id="error_alert"]
 *** Test Cases ***
 T0001 Sign-in valid with username and password
     [Tags]    successful-case
-    Open Browser    about:blank    chrome
-    Go To    ${url_signin}
+    Open Browser    ${url_signin}    chrome
     Title Should Be    Sign In
     Input Text    ${textbox_username}    cekmitl
     Input Text    ${textbox_password}   ecc56789
@@ -31,8 +30,7 @@ T0001 Sign-in valid with username and password
 
 T0002 Sign-in with valid username and invalid password
     [Tags]    failed-case
-    Open Browser    about:blank    chrome
-    Go To    ${url_signin}
+    Open Browser    ${url_signin}    chrome
     Title Should Be    Sign In
     Input Text    ${textbox_username}    cekmitl
     Input Text    ${textbox_password}   ecc56789_x
@@ -42,8 +40,7 @@ T0002 Sign-in with valid username and invalid password
 
 T0003 Sign-in with invalid username and valid password
     [Tags]    failed-case
-    Open Browser    about:blank    chrome
-    Go To    ${url_signin}
+    Open Browser    ${url_signin}    chrome
     Title Should Be    Sign In
     Input Text    ${textbox_username}    cekmitl_x
     Input Text    ${textbox_password}   ecc56789
@@ -53,8 +50,7 @@ T0003 Sign-in with invalid username and valid password
 
 T0004 Sign-in with invalid username and invalid password
     [Tags]    failed-case
-    Open Browser    about:blank    chrome
-    Go To    ${url_signin}
+    Open Browser    ${url_signin}    chrome
     Title Should Be    Sign In
     Input Text    ${textbox_username}    cekmitl_x
     Input Text    ${textbox_password}   ecc56789_x
