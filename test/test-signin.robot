@@ -14,64 +14,49 @@ ${alert_box_error}     //*[@id="error_alert"]
 
 
 *** Keywords ***
-Verify Title Page
-    [Arguments]    ${title}
-    Title Should Be    ${title}
-
-Input Username and Password
-    [Arguments]    ${xpath_user}    ${xpath_pass}    ${username}    ${password}
-    Element Should Be Visible    ${xpath_user}
-    Element Should Be Visible    ${xpath_pass}
-    Input Text    ${xpath_user}    ${username}
-    Input Text    ${xpath_pass}    ${password}
-
-Click Button Signin
-    [Arguments]    ${btn}
-    Element Should Be Visible    ${btn}
-    Click Element    ${btn}
-
-Verify Signin
-    [Arguments]    ${xpath}    ${text}
-    Element Should Be Visible    ${xpath}
-    Element Should Contain     ${xpath}    ${text}
 
 
 
 *** Test Cases ***
-T0001 Sign-in valid with email and password
+T0001 Sign-in valid with username and password
     [Tags]    successful-case
-    Open Browser    ${url_signin}    chrome
-    Verify Title Page    Sign In
-    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl    ecc56789
-    Click Button Signin    ${button_signin}
-    Verify Title Page    Home
+    Open Browser    about:blank    chrome
+    Go To    ${url_signin}
+    Title Should Be    Sign In
+    Input Text    ${textbox_username}    cekmitl
+    Input Text    ${textbox_password}   ecc56789
+    Click Element    ${button_signin}
+    Title Should Be    Home
 
 
-T0002 Sign-in with valid email and invalid password
+T0002 Sign-in with valid username and invalid password
     [Tags]    failed-case
     Open Browser    about:blank    chrome
     Go To    ${url_signin}
-    Verify Title Page    Sign In
-    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl    ecc56789_x
-    Click Button Signin    ${button_signin}
-    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+    Title Should Be    Sign In
+    Input Text    ${textbox_username}    cekmitl
+    Input Text    ${textbox_password}   ecc56789_x
+    Click Element    ${button_signin}
+    Element Should Contain    ${alert_box_error}    Please enter valid username and password!
 
 
-T0003 Sign-in with invalid email and valid password
+T0003 Sign-in with invalid username and valid password
     [Tags]    failed-case
     Open Browser    about:blank    chrome
     Go To    ${url_signin}
-    Verify Title Page    Sign In
-    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl_x    ecc56789
-    Click Button Signin    ${button_signin}
-    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+    Title Should Be    Sign In
+    Input Text    ${textbox_username}    cekmitl_x
+    Input Text    ${textbox_password}   ecc56789
+    Click Element    ${button_signin}
+    Element Should Contain    ${alert_box_error}    Please enter valid username and password!
 
 
-T0004 Sign-in with invalid email and invalid password
+T0004 Sign-in with invalid username and invalid password
     [Tags]    failed-case
     Open Browser    about:blank    chrome
     Go To    ${url_signin}
-    Verify Title Page    Sign In
-    Input Username and Password    ${textbox_username}    ${textbox_password}   cekmitl_x    ecc56789_x
-    Click Button Signin    ${button_signin}
-    Verify Signin    ${alert_box_error}    Please enter valid username and password!
+    Title Should Be    Sign In
+    Input Text    ${textbox_username}    cekmitl_x
+    Input Text    ${textbox_password}   ecc56789_x
+    Click Element    ${button_signin}
+    Element Should Contain    ${alert_box_error}    Please enter valid username and password!
